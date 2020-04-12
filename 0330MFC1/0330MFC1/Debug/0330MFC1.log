@@ -1,9 +1,0 @@
-﻿  stdafx.cpp
-  MainFrm.cpp
-  0330MFC1View.cpp
-d:\myproject\0330mfc1\0330mfc1\0330mfc1view.cpp(142): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
-  0330MFC1Doc.cpp
-  0330MFC1.cpp
-  正在生成代码...
-  0330MFC1.vcxproj -> D:\MyProject\0330MFC1\Debug\0330MFC1.exe
-  0330MFC1.vcxproj -> D:\MyProject\0330MFC1\Debug\0330MFC1.pdb (Partial PDB)
