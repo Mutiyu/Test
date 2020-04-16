@@ -1,3 +1,8 @@
-﻿  Exp1Doc.cpp
-  Exp1.vcxproj -> D:\visualC++\Exp1\Debug\Exp1.exe
-  Exp1.vcxproj -> D:\visualC++\Exp1\Debug\Exp1.pdb (Partial PDB)
+﻿  stdafx.cpp
+  MainFrm.cpp
+  Exp1View.cpp
+  Exp1Doc.cpp
+  Exp1.cpp
+  正在生成代码...
+  Exp1.vcxproj -> D:\VCmyproject\二MFC1and 2\Debug\Exp1.exe
+  Exp1.vcxproj -> D:\VCmyproject\二MFC1and 2\Debug\Exp1.pdb (Partial PDB)
