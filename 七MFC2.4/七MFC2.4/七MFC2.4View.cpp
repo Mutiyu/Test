@@ -35,8 +35,8 @@ END_MESSAGE_MAP()
 C七MFC24View::C七MFC24View()
 {
 	// TODO: 在此处添加构造代码
-	cr.left = 200; cr.top = 200;
-	cr.right = 560; cr.bottom =740;
+	cr.left = 200; cr.top = 100;
+	cr.right = 400; cr.bottom =400;
 	set = false;
 	A = B = C = 0;
 }
@@ -129,7 +129,7 @@ void C七MFC24View::Onpopdlg()
 		A = dlg.a;
 		B = dlg.b;
 		C = dlg.c;
-		rgn.CreateEllipticRgn(200, 200, 560, 740);
+		rgn.CreateEllipticRgn(200,100,400,400);
 		brush.CreateSolidBrush(RGB(A, B, C));
 		GetDC()->FillRgn(&rgn, &brush);
 	}
