@@ -18,6 +18,8 @@ public:
 // 操作
 public:
 	CRect cr;
+	bool m_bDashLine;
+	bool set;
 // 重写
 public:
 	virtual void OnDraw(CDC* pDC);  // 重写以绘制该视图

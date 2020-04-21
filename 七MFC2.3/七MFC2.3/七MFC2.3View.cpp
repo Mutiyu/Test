@@ -36,6 +36,8 @@ C七MFC23View::C七MFC23View()
 	// TODO: 在此处添加构造代码
 	cr.left = 200; cr.top = 100;
 	cr.right = 400; cr.bottom = 400;
+	m_bDashLine =false;
+	set = false;
 }
 
 C七MFC23View::~C七MFC23View()
@@ -59,6 +61,20 @@ void C七MFC23View::OnDraw(CDC* pDC)
 	if (!pDoc)
 		return;
 	pDC->Ellipse(cr);
+	CPen *oldpen = NULL;
+	CPen pen(PS_DASH, 1, RGB(255, 0, 0));
+	GetDC()->SelectStockObject(NULL_BRUSH);
+	CBrush *oldbrush = NULL;
+	CBrush *brush=CBrush::FromHandle((HBRUSH)GetStockObject(NULL_BRUSH));
+	oldbrush = pDC->SelectObject(brush);
+	if (set)
+	{
+			//CreatePen(PS_DASH, 0,RGB(255,0,0));
+			oldpen = pDC->SelectObject(&pen);
+			pDC->Rectangle(cr);
+			pDC->SelectObject(oldpen);
+
+	}
 	// TODO: 在此处为本机数据添加绘制代码
 }
 
@@ -110,7 +126,7 @@ void C七MFC23View::OnLButtonDown(UINT nFlags, CPoint point)
 {
 	// TODO: 在此添加消息处理程序代码和/或调用默认值
 	CClientDC  dc(this);
-	
+	m_bDashLine = true;
 	CPen *oldpen = NULL;
 	CPen pen(PS_DASH, 1, RGB(255, 0, 0));
 	GetDC()->SelectStockObject(NULL_BRUSH);
@@ -121,11 +137,13 @@ void C七MFC23View::OnLButtonDown(UINT nFlags, CPoint point)
 	{
 		if (point.y > cr.top&&point.y < cr.bottom)
 		{
+				//CreatePen(PS_DASH, 0,RGB(255,0,0));
 				oldpen = dc.SelectObject(&pen);
 				dc.Rectangle(cr);
 				dc.SelectObject(oldpen);
 			
 	   }
 	}
+	//Invalidate();
 	CView::OnLButtonDown(nFlags, point);
 }
